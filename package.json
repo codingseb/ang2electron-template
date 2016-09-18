@@ -1,0 +1,37 @@
+{
+  "name": "ang2electon-template",
+  "version": "0.0.1",
+  "description": "Template for applications with Electron + Angular2 + Bootstrap, Building Angular app with webpack and release application with gulp and electron packager with simple npm run methods.",
+  "scripts": {
+    "clean:build": "rimraf build",
+    "clean:dist": "rimraf dist",
+    "clean": "npm run clean:dist && npm run clean:build",
+    "webpack": "webpack --progress --profile --colors --display-error-details --display-cached",
+    "watch": "webpack --watch --progress --profile --colors --display-error-details --display-cached",
+    "electron": "electron ./src/electron/main.js",
+    "package:win": "electron-packager . Ang2Electron --platform=win32 --arch=all --out=dist --overwrite --asar=true",
+    "release:win": "npm run clean && npm run build"
+  },
+  "author": "Coding Seb",
+  "license": "MIT",
+  "devDependencies": {
+    "electron-packager": "^8.0.0",
+    "electron-prebuilt": "^0.37.8",
+    "gulp": "^3.9.1",
+    "html-webpack-plugin": "^2.22.0",
+    "rimraf": "^2.5.4",
+    "ts-loader": "^0.7.2",
+    "typescript": "^1.7.3",
+    "typings": "^1.3.3",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
+  },
+  "dependencies": {
+    "angular2": "2.0.0-beta.17",
+    "bootstrap": "^3.3.7",
+    "es6-shim": "^0.35.0",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.6",
+    "zone.js": "^0.6.12"
+  }
+}
